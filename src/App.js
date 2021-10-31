@@ -14,6 +14,7 @@ import Prefetch from "./components/Pages/Prefetch";
 import Animate from "./components/Pages/Animate";
 import Teams from "./components/Pages/Teams";
 import Career from "./components/Pages/Career";
+import Enquiry from "./components/Pages/Enquiry";
 
 export const LINKS = [
   {
@@ -49,16 +50,21 @@ export const LINKS = [
   {
     name: "Enquiries",
     path: "/enquiries",
-    components: <Home />,
+    components: <Enquiry />,
   },
 ];
 
 function App() {
   const [animate, setAnimate] = useState(true);
+  const [animateIntro, setAnimateIntro] = useState(true);
   const hasAgreed = localStorage.getItem("agree");
 
   const handleAnimationEnd = () => {
     setAnimate(false);
+  };
+
+  const handleAnimationIntroEnd = () => {
+    setAnimateIntro(false);
   };
 
   return animate ? (
@@ -66,7 +72,11 @@ function App() {
   ) : (
     <Router>
       {hasAgreed ? (
-        <div className="App">
+        <div
+          className="App"
+          style={!animateIntro ? { animation: "initial" } : {}}
+          onAnimationEnd={handleAnimationIntroEnd}
+        >
           <GlobalStyled />
           <Header />
           <Sidebar />

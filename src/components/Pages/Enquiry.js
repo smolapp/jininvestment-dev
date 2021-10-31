@@ -21,7 +21,6 @@ function Page() {
       subject: "",
       contact: "",
       company: "",
-      file: "",
       message: "",
     }
   );
@@ -33,7 +32,6 @@ function Page() {
     const postBody = {
       name: "Jin Investment",
       subject: `Enquiry from ${name}`,
-      attachment: file,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nContact: ${contact}\nCompany: ${company}\nMessage: ${message}`,
       hash: {
         iv: "db94db3d50ec4e87fd411372919f74be",
@@ -63,7 +61,7 @@ function Page() {
   };
 
   useEffect(() => {
-    document.title = "Jin Investment - Career Opportunities";
+    document.title = "Jin Investment - Enquiries";
   }, []);
 
   return (
@@ -71,19 +69,20 @@ function Page() {
       <Wrapper>
         <div className="page-content">
           <div className="text">
-            <h2>Career Opportunities</h2>
+            <h2>Enquiries</h2>
             <p>
-              Jin Investment Management is always looking for talented
-              individuals to help grow our firm on the operations and investment
-              side. On the investment side we seek fluent bilingual speakers of
-              Japanese and English who are passionate about markets. The
-              candidate must have a strong background in fundamental analysis as
-              well as a deep knowledge of Japanese listed companies. On the
-              operations side we seek applicants who have a solid knowledge base
-              of operations and compliance in an investment management
-              environment. The candidate must have a willingness to learn and an
-              attention to detail. If you have any interest please send your
-              resumé with a cover letter using the form below.
+              8 Eu Tong Sen Street #14-89, The Central, Singapore 059818 (Tower
+              1)
+              <br />
+              Main: +65 6713 9670 &nbsp; | &nbsp; Fax: +65 6222 8953
+              <br />
+              <a
+                className="link"
+                href="https://www.google.com.sg/maps/place/8+Eu+Tong+Sen+St,+Singapore+059818/@1.2885249,103.8467874,17z/data=!3m1!4b1!4m2!3m1!1s0x31da190a9a635a7f:0x7d5110f413b57769"
+                target="_blank"
+              >
+                View Map on Google
+              </a>
             </p>
             <Field>
               <input
@@ -146,9 +145,6 @@ function Page() {
               />
             </Field>
             <Field>
-              <input type="file" />
-            </Field>
-            <Field>
               <textarea
                 placeholder="Message"
                 value={data.message}
@@ -164,7 +160,7 @@ function Page() {
           </div>
           <div className="image">
             <img
-              src={require("../../images/management.png").default}
+              src={require("../../images/enquiries.png").default}
               alt="image"
             />
           </div>

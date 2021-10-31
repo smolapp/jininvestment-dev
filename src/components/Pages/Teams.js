@@ -175,11 +175,11 @@ const TeamItem = styled.div`
       right: 14px;
       top: 50%;
       transition: all 200ms ${MaterialCubicBezier};
-      transform: translateY(calc(-50% + 4px)) rotate(-45deg);
+      transform: translateY(calc(-50% - 2px)) rotate(135deg);
     }
     &.active {
       &:before {
-        transform: translateY(calc(-50% - 2px)) rotate(135deg);
+        transform: translateY(calc(-50% + 4px)) rotate(-45deg);
       }
     }
   }

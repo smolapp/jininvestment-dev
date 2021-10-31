@@ -47,6 +47,7 @@ export const Wrapper = styled.div`
 export const PageWrapper = styled.main`
   margin-top: auto;
   animation: ${fadeInUp} 400ms ${MaterialCubicBezier} forwards;
+  padding-top: 100px;
   h2 {
     font-size: 36px;
     font-family: Mate, serif;
