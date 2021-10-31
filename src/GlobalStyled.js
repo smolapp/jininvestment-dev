@@ -1,8 +1,19 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export const PrimaryColor = "#252362";
 
 export const MaterialCubicBezier = "cubic-bezier(0.4, 0.0, 0.2, 1)";
+
+export const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 const GlobalStyled = createGlobalStyle`
   *{ 
@@ -18,7 +29,12 @@ const GlobalStyled = createGlobalStyle`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 40px 0;
+    padding: 40px 0 80px;
+    animation: ${fadeInUp} 0.5s ${MaterialCubicBezier} forwards;
+  }
+
+  .ReactCollapse--collapse {
+    transition: height 400ms ${MaterialCubicBezier};
   }
 `;
 
@@ -30,6 +46,7 @@ export const Wrapper = styled.div`
 
 export const PageWrapper = styled.main`
   margin-top: auto;
+  animation: ${fadeInUp} 400ms ${MaterialCubicBezier} forwards;
   h2 {
     font-size: 36px;
     font-family: Mate, serif;

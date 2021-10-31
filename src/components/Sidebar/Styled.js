@@ -9,6 +9,8 @@ export const SidebarWrapper = styled.div`
   bottom: 0;
   height: 100vh;
   overflow: auto;
+  z-index: 10;
+  pointer-events: none;
   ${Wrapper} {
     display: flex;
     height: 100%;
@@ -20,7 +22,8 @@ export const SidebarContainer = styled.nav`
   flex-direction: column;
   width: 200px;
   margin-left: auto;
-  padding: 40px 0;
+  padding: 40px 0 80px;
+  pointer-events: auto;
   > a {
     text-decoration: none;
     font-family: Mate, serif;
@@ -45,7 +48,6 @@ export const SidebarContainer = styled.nav`
         transform: scaleY(1);
         opacity: 1;
       }
-     
     }
     &:not(:last-child) {
       margin-bottom: 20px;

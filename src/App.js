@@ -1,3 +1,4 @@
+import { createRef, useEffect, useState } from "react";
 import GlobalStyled, { Wrapper } from "./GlobalStyled";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -8,6 +9,11 @@ import Home from "./components/Pages/Home";
 import Mission from "./components/Pages/Mission";
 import Corporate from "./components/Pages/Corporate";
 import Investment from "./components/Pages/Investment";
+import Footer from "./components/Footer";
+import Prefetch from "./components/Pages/Prefetch";
+import Animate from "./components/Pages/Animate";
+import Teams from "./components/Pages/Teams";
+import Career from "./components/Pages/Career";
 
 export const LINKS = [
   {
@@ -33,12 +39,12 @@ export const LINKS = [
   {
     name: "Our Teams",
     path: "/biographies",
-    components: <Home />,
+    components: <Teams />,
   },
   {
     name: "Career",
     path: "/career-opportunities",
-    components: <Home />,
+    components: <Career />,
   },
   {
     name: "Enquiries",
@@ -48,32 +54,46 @@ export const LINKS = [
 ];
 
 function App() {
-  return (
+  const [animate, setAnimate] = useState(true);
+  const hasAgreed = localStorage.getItem("agree");
+
+  const handleAnimationEnd = () => {
+    setAnimate(false);
+  };
+
+  return animate ? (
+    <Animate onAnimationEnd={handleAnimationEnd} />
+  ) : (
     <Router>
-      <div className="App">
-        <GlobalStyled />
-        <Header />
-        <Sidebar />
-        <Switch>
-          {LINKS.map((link, index) => {
-            const { components, path } = link;
-            return (
-              <Route key={index} path={path} exact>
-                {components}
-              </Route>
-            );
-          })}
-          {/*<Route exact path="/">*/}
-          {/*  <Home />*/}
-          {/*</Route>*/}
-          {/*<Route exact path="/mission-statement">*/}
-          {/*  <Mission />*/}
-          {/*</Route>*/}
-          {/*<Route exact path="/mission-statement">*/}
-          {/*  <Mission />*/}
-          {/*</Route>*/}
-        </Switch>
-      </div>
+      {hasAgreed ? (
+        <div className="App">
+          <GlobalStyled />
+          <Header />
+          <Sidebar />
+          <Switch>
+            {LINKS.map((link, index) => {
+              const { components, path } = link;
+              return (
+                <Route key={index} path={path} exact>
+                  {components}
+                </Route>
+              );
+            })}
+            {/*<Route exact path="/">*/}
+            {/*  <Home />*/}
+            {/*</Route>*/}
+            {/*<Route exact path="/mission-statement">*/}
+            {/*  <Mission />*/}
+            {/*</Route>*/}
+            {/*<Route exact path="/mission-statement">*/}
+            {/*  <Mission />*/}
+            {/*</Route>*/}
+          </Switch>
+          <Footer />
+        </div>
+      ) : (
+        <Prefetch />
+      )}
     </Router>
   );
 }
