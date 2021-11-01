@@ -16,7 +16,7 @@ export const fadeInUp = keyframes`
 `;
 
 const GlobalStyled = createGlobalStyle`
-  *{ 
+  * { 
     box-sizing: border-box;
   }
   body {
@@ -39,9 +39,12 @@ const GlobalStyled = createGlobalStyle`
 `;
 
 export const Wrapper = styled.div`
-  width: 1120px;
+  width: 90vw;
   margin: 0 auto;
   position: relative;
+  @media screen and (max-width: 1366px) {
+    width: 1120px;
+  }
 `;
 
 export const PageWrapper = styled.main`
@@ -72,8 +75,11 @@ export const PageWrapper = styled.main`
       width: 400px;
       filter: grayscale(1);
       opacity: 0.2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
       img {
-        width: 100%;
+        width: 80%;
       }
     }
   }

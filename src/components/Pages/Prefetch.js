@@ -83,6 +83,7 @@ function Prefetch() {
 const PrefetchWrapper = styled.div`
   font-family: "Open Sans", sans-serif;
   animation: ${fadeInUp} 0.5s ${MaterialCubicBezier} forwards;
+  padding-bottom: 40px;
   header {
     padding: 20px 0;
     display: flex;
