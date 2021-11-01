@@ -79,4 +79,48 @@ export const PageWrapper = styled.main`
   }
 `;
 
+export const Field = styled.div`
+  border: 2px solid #eee;
+  border-radius: 4px;
+  min-height: 40px;
+  background-color: rgb(251, 252, 252);
+  margin-bottom: 12px;
+  transition: all 200ms ${MaterialCubicBezier};
+
+  &:focus-within {
+    border-color: ${PrimaryColor};
+  }
+
+  input,
+  textarea {
+    height: 100%;
+    min-height: 40px;
+    width: 100%;
+    padding-left: 20px;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+
+  textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+    padding-top: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
+`;
+
+export const SubmitButton = styled.button`
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-color: ${PrimaryColor};
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  border: 0;
+  outline: none;
+`;
+
 export default GlobalStyled;
