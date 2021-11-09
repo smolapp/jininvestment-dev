@@ -48,9 +48,9 @@ export const Wrapper = styled.div`
 `;
 
 export const PageWrapper = styled.main`
-  margin-top: auto;
+  margin-bottom: auto;
   animation: ${fadeInUp} 400ms ${MaterialCubicBezier} forwards;
-  padding-top: 100px;
+  padding-top: 200px;
   h2 {
     font-size: 36px;
     font-family: Mate, serif;
@@ -67,7 +67,7 @@ export const PageWrapper = styled.main`
   .page-content {
     width: calc(100% - 200px);
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     .text {
       width: 60%;
     }
