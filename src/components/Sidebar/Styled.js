@@ -26,9 +26,10 @@ export const SidebarContainer = styled.nav`
   pointer-events: auto;
   > a {
     text-decoration: none;
-    font-family: Mate, serif;
+    font: normal normal normal 14px / 18px Helvetica, Arial,
+      Verdana, sans-serif;
     color: #3a3a3a;
-    font-size: 18px;
+    font-size: 16px;
     position: relative;
     &:before {
       content: "";

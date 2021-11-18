@@ -61,7 +61,7 @@ export const PageWrapper = styled.main`
     font-size: 14px;
     line-height: 26px;
     font-weight: 300;
-    font-family: "Open Sans", sans-serif;
+    font-family: Mate, serif;
     color: rgb(136, 136, 136);
     text-align: justify;
   }
