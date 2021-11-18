@@ -43,15 +43,15 @@ export const LINKS = [
     components: <Teams />,
   },
   {
-    name: "Career",
-    path: "/career-opportunities",
-    components: <Career />,
-  },
-  {
     name: "Enquiries",
     path: "/enquiries",
     components: <Enquiry />,
   },
+  {
+    name: "Career",
+    path: "/career-opportunities",
+    components: <Career />,
+  }
 ];
 
 function App() {

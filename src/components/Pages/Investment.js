@@ -26,7 +26,7 @@ function Page() {
           </div>
           <div className="image">
             <img
-              src={require("../../images/corporate.png").default}
+              src={require("../../images/corporate_new.jpg").default}
               alt="image"
             />
           </div>

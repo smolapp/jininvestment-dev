@@ -27,8 +27,8 @@ export const SidebarContainer = styled.nav`
   > a {
     text-decoration: none;
     font-family: Mate, serif;
-    color: ${PrimaryColor};
-    font-size: 24px;
+    color: #3a3a3a;
+    font-size: 18px;
     position: relative;
     &:before {
       content: "";
@@ -36,7 +36,7 @@ export const SidebarContainer = styled.nav`
       left: -20px;
       height: 100%;
       background: ${PrimaryColor};
-      width: 4px;
+      width: 2px;
       transition: all 200ms ${MaterialCubicBezier};
       transform: scaleY(0);
       transform-origin: top;
@@ -52,8 +52,8 @@ export const SidebarContainer = styled.nav`
     &:not(:last-child) {
       margin-bottom: 20px;
     }
-    &:last-child {
-      margin-top: auto;
-    }
+    //&:last-child {
+    //  margin-top: auto;
+    //}
   }
 `;

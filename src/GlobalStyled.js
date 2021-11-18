@@ -55,6 +55,7 @@ export const PageWrapper = styled.main`
     font-size: 36px;
     font-family: Mate, serif;
     color: ${PrimaryColor};
+    font-weight: normal;
   }
   p {
     font-size: 14px;

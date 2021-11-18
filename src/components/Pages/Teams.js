@@ -140,7 +140,7 @@ function Page() {
           </div>
           <div className="image">
             <img
-              src={require("../../images/management.png").default}
+              src={require("../../images/management_new.jpg").default}
               alt="image"
             />
           </div>

@@ -1,6 +1,11 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import {fadeInUp, MaterialCubicBezier, PrimaryColor, Wrapper} from "../../GlobalStyled";
+import {
+  fadeInUp,
+  MaterialCubicBezier,
+  PrimaryColor,
+  Wrapper,
+} from "../../GlobalStyled";
 
 function Prefetch() {
   const agree = () => {
@@ -84,6 +89,9 @@ const PrefetchWrapper = styled.div`
   font-family: "Open Sans", sans-serif;
   animation: ${fadeInUp} 0.5s ${MaterialCubicBezier} forwards;
   padding-bottom: 40px;
+  ${Wrapper} {
+    width: 1200px;
+  }
   header {
     padding: 20px 0;
     display: flex;
