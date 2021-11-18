@@ -16,34 +16,9 @@ export const SidebarWrapper = styled.div`
   overflow: auto;
   z-index: 20;
   pointer-events: none;
-  @media screen and (max-width: ${MobileWidth}) {
-    pointer-events: auto;
-  }
   ${Wrapper} {
     display: flex;
     height: 100%;
-  }
-  .hamburger {
-    margin-left: auto;
-    transform: scale(0.6);
-    display: none;
-    padding: 0;
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    z-index: 10;
-    @media screen and (max-width: ${MobileWidth}) {
-      display: block;
-    }
-    .hamburger-inner {
-      background-color: ${PrimaryColor};
-      transition-duration: 200ms;
-      &:before,
-      &:after {
-        background-color: ${PrimaryColor};
-        transition-duration: 200ms;
-      }
-    }
   }
 `;
 

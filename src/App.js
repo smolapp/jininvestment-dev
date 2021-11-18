@@ -1,4 +1,4 @@
-import { createRef, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import GlobalStyled, { Wrapper } from "./GlobalStyled";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -51,10 +51,13 @@ export const LINKS = [
     name: "Career",
     path: "/career-opportunities",
     components: <Career />,
-  }
+  },
 ];
 
+export const AppContext = createContext({});
+
 function App() {
+  const [showNav, setShowNav] = useState(false);
   const [animate, setAnimate] = useState(true);
   const [animateIntro, setAnimateIntro] = useState(true);
   const hasAgreed = localStorage.getItem("agree");
@@ -73,34 +76,41 @@ function App() {
     <Router>
       <GlobalStyled />
       {hasAgreed ? (
-        <div
-          className="App"
-          style={!animateIntro ? { animation: "initial" } : {}}
-          onAnimationEnd={handleAnimationIntroEnd}
+        <AppContext.Provider
+          value={{
+            showNav,
+            setShowNav,
+          }}
         >
-          <Header />
-          <Sidebar />
-          <Switch>
-            {LINKS.map((link, index) => {
-              const { components, path } = link;
-              return (
-                <Route key={index} path={path} exact>
-                  {components}
-                </Route>
-              );
-            })}
-            {/*<Route exact path="/">*/}
-            {/*  <Home />*/}
-            {/*</Route>*/}
-            {/*<Route exact path="/mission-statement">*/}
-            {/*  <Mission />*/}
-            {/*</Route>*/}
-            {/*<Route exact path="/mission-statement">*/}
-            {/*  <Mission />*/}
-            {/*</Route>*/}
-          </Switch>
-          <Footer />
-        </div>
+          <div
+            className="App"
+            style={!animateIntro ? { animation: "initial" } : {}}
+            onAnimationEnd={handleAnimationIntroEnd}
+          >
+            <Header />
+            <Sidebar />
+            <Switch>
+              {LINKS.map((link, index) => {
+                const { components, path } = link;
+                return (
+                  <Route key={index} path={path} exact>
+                    {components}
+                  </Route>
+                );
+              })}
+              {/*<Route exact path="/">*/}
+              {/*  <Home />*/}
+              {/*</Route>*/}
+              {/*<Route exact path="/mission-statement">*/}
+              {/*  <Mission />*/}
+              {/*</Route>*/}
+              {/*<Route exact path="/mission-statement">*/}
+              {/*  <Mission />*/}
+              {/*</Route>*/}
+            </Switch>
+            <Footer />
+          </div>
+        </AppContext.Provider>
       ) : (
         <Prefetch />
       )}

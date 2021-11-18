@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MobileWidth, PrimaryColor } from "../../GlobalStyled";
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -16,12 +17,33 @@ export const HeaderWrapper = styled.header`
   z-index: 10;
   @media screen and (max-width: 1365px) {
     padding: 20px 0;
-    pointer-events: none;
   }
   .logo {
     width: 130px;
     @media screen and (max-width: 1365px) {
       width: 90px;
+    }
+  }
+  .hamburger {
+    margin-left: auto;
+    transform: scale(0.6);
+    display: none;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 10;
+    @media screen and (max-width: ${MobileWidth}) {
+      display: block;
+    }
+    .hamburger-inner {
+      background-color: ${PrimaryColor};
+      transition-duration: 200ms;
+      &:before,
+      &:after {
+        background-color: ${PrimaryColor};
+        transition-duration: 200ms;
+      }
     }
   }
 `;
