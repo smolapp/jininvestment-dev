@@ -6,16 +6,17 @@ export const FooterWrapper = styled.footer`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40px;
   color: #fff;
   background-color: ${PrimaryColor};
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px 0;
   p {
     margin: 0;
     text-align: center;
-    font-family: Mate, serif;
+    font-size: 11px;
+    font-family: "Open Sans", sans-serif;
   }
   a {
     text-decoration: none;

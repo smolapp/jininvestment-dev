@@ -14,7 +14,14 @@ export const HeaderWrapper = styled.header`
     rgba(255, 255, 255, 0.05) 100%
   );
   z-index: 10;
+  @media screen and (max-width: 1365px) {
+    padding: 20px 0;
+    pointer-events: none;
+  }
   .logo {
     width: 130px;
+    @media screen and (max-width: 1365px) {
+      width: 90px;
+    }
   }
 `;

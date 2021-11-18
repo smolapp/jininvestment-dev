@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export const PrimaryColor = "#252362";
-
+export const MobileWidth = "767px";
 export const MaterialCubicBezier = "cubic-bezier(0.4, 0.0, 0.2, 1)";
 
 export const fadeInUp = keyframes`
@@ -45,17 +45,27 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 1366px) {
     width: 1120px;
   }
+  @media screen and (max-width: 1365px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 export const PageWrapper = styled.main`
   margin-bottom: auto;
   animation: ${fadeInUp} 400ms ${MaterialCubicBezier} forwards;
   padding-top: 200px;
+  @media screen and (max-width: 1365px) {
+    padding-top: 50px;
+  }
   h2 {
     font-size: 36px;
     font-family: Mate, serif;
     color: ${PrimaryColor};
     font-weight: normal;
+    @media screen and (max-width: 1365px) {
+      font-size: 30px;
+    }
   }
   p {
     font-size: 14px;
@@ -64,13 +74,23 @@ export const PageWrapper = styled.main`
     font-family: Mate, serif;
     color: rgb(136, 136, 136);
     text-align: justify;
+    @media screen and (max-width: 1365px) {
+      font-size: 12px;
+    }
   }
   .page-content {
     width: calc(100% - 200px);
     display: flex;
     align-items: flex-start;
+    @media screen and (max-width: 1365px) {
+      width: 100%;
+      flex-direction: column;
+    }
     .text {
       width: 60%;
+      @media screen and (max-width: 1365px) {
+        width: 100%;
+      }
     }
     .image {
       width: 400px;
@@ -79,6 +99,9 @@ export const PageWrapper = styled.main`
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
+      @media screen and (max-width: 1365px) {
+        width: 100%;
+      }
       img {
         width: 80%;
       }
