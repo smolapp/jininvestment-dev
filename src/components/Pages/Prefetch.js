@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import {
   fadeInUp,
-  MaterialCubicBezier,
+  MaterialCubicBezier, MobileWidth,
   PrimaryColor,
   Wrapper,
 } from "../../GlobalStyled";
@@ -91,6 +91,9 @@ const PrefetchWrapper = styled.div`
   padding-bottom: 40px;
   ${Wrapper} {
     width: 1200px;
+    @media screen and (max-width: ${MobileWidth}) {
+      width: 100%;
+    }
   }
   header {
     padding: 20px 0;
@@ -99,6 +102,9 @@ const PrefetchWrapper = styled.div`
     justify-content: center;
     img {
       width: 140px;
+      @media screen and (max-width: ${MobileWidth}) {
+        width: 100px;
+      }
     }
   }
   p {

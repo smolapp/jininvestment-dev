@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { MaterialCubicBezier } from "../../GlobalStyled";
+import {MaterialCubicBezier, MobileWidth} from "../../GlobalStyled";
 
 function Animate(props) {
   return (
@@ -39,6 +39,9 @@ const AnimateWrapper = styled.div`
     width: 50vw;
     max-width: 180px;
     animation: ${fadeIn} 1s ${MaterialCubicBezier} forwards;
+    @media screen and (max-width: ${MobileWidth}) {
+      width: 100px;
+    }
   }
 `;
 

@@ -71,13 +71,13 @@ function App() {
     <Animate onAnimationEnd={handleAnimationEnd} />
   ) : (
     <Router>
+      <GlobalStyled />
       {hasAgreed ? (
         <div
           className="App"
           style={!animateIntro ? { animation: "initial" } : {}}
           onAnimationEnd={handleAnimationIntroEnd}
         >
-          <GlobalStyled />
           <Header />
           <Sidebar />
           <Switch>
